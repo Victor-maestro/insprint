@@ -1,0 +1,368 @@
+@import "vars"
+
+
+// ≥1200px
+@media screen and (max-width: 1199px)
+  .section
+    padding: 100px 0
+
+  .header
+    &__wrapper
+      width: 100%
+      margin-left: 70px
+
+    &__menu
+      margin-right: auto
+
+  .menu
+    &__list
+      &_footer
+        align-items: center
+
+  .process
+    &__item
+      padding: 0 20px
+
+  .comments
+    padding-bottom: 730px
+
+    &__item
+      width: 300px
+
+  .advantages
+    &__card
+      width: 470px
+
+      &_first
+        background-position: 170% center
+
+      &_second
+        background-position: 130% center
+
+  .masters
+    &__item
+      margin: 0 auto
+
+  .form
+    &__wrap
+      width: 350px
+
+  .footer
+    padding: 100px 0
+
+    &__links
+      align-items: flex-end
+
+  .social
+    &__lst
+      justify-content: center
+      margin-top: 40px
+
+
+// ≥992px
+@media screen and (max-width: 991px)
+  .header
+    &__line
+      min-height: 90px
+
+    &__wrapper
+      display: none
+      position: absolute
+      z-index: 1
+      top: 90px
+      width: 100%
+      margin-left: 0
+      padding: 20px 0 30px
+      text-align: center
+      background-color: #ffffff
+
+    &__menu
+      margin-bottom: 20px
+
+    &__link-search
+      padding: 20px 
+      padding-left: 30px
+
+    &__toggle
+      display: block
+
+  .menu
+    &__list
+      flex-direction: column
+      align-items: center
+
+    &__item
+      margin-bottom: 20px
+      
+      &_footer
+        margin-bottom: 15px
+
+  .top
+    min-height: 640px
+    padding-top: 60px
+
+  .process
+    &__inner
+      padding-top: 50px
+
+    &__item
+      padding: 0 15px
+
+    &__name
+      min-height: 63px
+
+    &__video
+      height: 440px
+
+  .comments
+    padding-bottom: 560px
+
+    &__lst
+      flex-direction: column
+      align-items: center
+      margin-top: 40px
+
+    &__item
+      width: 340px
+
+      &:not(:last-child)
+        margin-bottom: 20px
+
+    &__text
+      padding: 25px
+
+    &__author
+      padding: 25px
+      padding-left: 100px
+
+    &__foto
+      top: 50%
+      transform: translateY(-50%)
+
+  .advantages
+    &__wrap
+      flex-direction: column
+      align-items: center
+
+    &__card
+      &:not(:last-child)
+        margin-bottom: 30px
+
+  .masters
+    .swiper
+      &-button-next
+        right: 10px
+
+  .bottom
+    &__block
+      &_form
+        padding: 80px 0
+
+  .form
+    &__wrap
+      width: 340px
+
+  .footer
+    padding: 80px 0
+
+
+// ≥768px
+@media screen and (max-width: 767px)
+  .title-text
+    font-size: 40px
+
+  .section
+    padding: 80px 0
+
+  .top
+    min-height: 590px
+
+    &__subtitle
+      font-size: 20px
+  
+  .process
+    &__lst
+      flex-direction: column
+      align-items: center
+      margin-bottom: 40px
+
+    &__item
+      width: 100%
+      margin-bottom: 40px
+
+    &__name
+      min-height: auto
+
+    &__video
+      height: 340px
+
+    &__play
+      transform: translate(-50%, -50%) scale(0.7)
+
+  .comments
+    padding-bottom: 420px
+
+    &__subtitle
+      font-size: 20px
+
+  .bottom
+    &__block
+      &_form
+        &::before
+          display: none
+
+      &_image
+        height: 300px
+
+        &::before
+          width: 100%
+
+    &__title
+      text-align: center 
+
+  .form
+    &__wrap
+      margin: 0 auto
+
+  .footer
+    padding: 60px 0
+
+    &__copy
+      margin-bottom: 30px
+      text-align: center
+
+    &__links
+      align-items: center
+      margin-top: 30px
+
+// ≥576px
+@media screen and (max-width: 576px)
+  .container
+    width: 320px
+    padding-right: 10px
+    padding-left: 10px
+    
+  .title-text
+    font-size: 32px
+
+  .section
+    padding: 60px 0
+
+  .toggle
+    &__menu
+      right: 20px
+
+  .top
+    min-height: 640px
+    padding-top: 40px
+
+    &__wrap-btn
+      flex-direction: column
+      align-items: center
+
+    &__btn
+      width: 100%
+
+      &:not(:last-child)
+        margin-bottom: 20px
+  
+  .process
+    &__variants
+
+    &__link
+      padding: 10px 15px
+      text-align: center
+
+    &__lst
+      margin-bottom: 20px
+
+    &__video
+      height: 220px
+
+    &__play
+      transform: translate(-50%, -50%) scale(0.5)
+
+  .comments
+    padding-bottom: 240px
+
+    &__item
+      width: 280px
+
+    &__text
+      font-size: 20px
+
+    &__author
+      padding: 20px
+      padding-left: 100px
+
+  .advantages
+    &__card
+      position: relative
+      width: 100%
+      min-height: 200px
+      padding: 20px
+      overflow: hidden
+      background-position: 150% center
+
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        background-color: rgba(#ffffff, 0.5)
+
+    &__name
+      position: relative
+      font-size: 28px
+
+    &__link
+      position: relative
+
+  .masters 
+    &__item
+      width: 280px
+
+    &__images
+      height: 180px
+
+    &__avatar
+      top: -50px
+      width: 70px
+      height: 70px
+
+    &__name
+      font-size: 22px
+
+    .swiper
+      &-button-next
+        right: 0
+        transform: scale(0.8)
+
+  .bottom
+    .container
+      padding: 0
+      
+  .form
+    &__wrap
+      width: 260px
+
+    &__label
+      margin-bottom: 0
+    &__agreement
+      text-align: center
+
+  .questions
+    &__btn
+      padding: 20px 25px
+      padding-right: 60px
+      font-size: 20px
+
+    &__inner
+      padding: 0 25px 20px
+      padding-right: 60px
+      font-size: 18px
+
+      &.show
+        margin-top: 0

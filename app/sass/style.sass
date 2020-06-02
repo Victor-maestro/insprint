@@ -1,0 +1,814 @@
+@import "vars"
+@import "libs"
+@import "fonts"
+
+/* basic styles */
+
+::placeholder
+  color: rgba(0, 0, 0, 0.4)
+
+::selection
+  background-color: $accent
+  color: #fff
+
+html
+  overflow-x: hidden
+  box-sizing: border-box
+
+*, ::before, ::after
+  box-sizing: inherit
+  
+body
+  position: relative
+  min-width: 320px
+  overflow: hidden
+  font-weight: 500
+  font-family: $font-500
+  font-size: 16px
+  line-height: 1.2
+  color: $text
+  
+  input, textarea
+    border: #666 1px solid
+    outline: none
+
+img
+  display: block
+  max-width: 100%
+  height: auto
+
+b, strong
+  font-weight: bold
+
+.btn
+  display: block
+  padding: 20px 28px
+  font-weight: 600
+  font-size: 18px
+  line-height: 1.33
+  color: #ffffff
+  background-color: $accent
+  border: none
+  border-radius: 8px
+  transition: $slowdown
+  outline: none
+  cursor: pointer
+
+  &:hover
+    text-decoration: none
+    color: $accent
+    background-color: #ffffff
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08)
+
+  &:active
+    transform: scale(0.9)
+
+  &_white
+    color: $accent
+    background-color: #ffffff
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08)
+
+    &:hover
+      color: #ffffff
+      background-color: $accent
+      box-shadow: none
+      
+.link-btn
+  display: block
+  width: 250px
+  margin: 0 auto
+  
+  &:hover
+    color: #ffffff
+    text-decoration: none
+  
+.no-btn
+  padding: 0
+  background: none
+  border: none
+  &:active, &:focus
+    outline: none
+  
+input
+  outline: none
+  
+.lst
+  margin: 0
+  padding: 0
+  list-style: none
+  
+h1, h2, h3, h4
+  font-weight: 700
+  color: $text
+  line-height: 1.2
+
+.title-text
+  margin-bottom: 0
+  font-weight: 600
+  font-size: 48px
+  font-family: $font-600
+  color: $title
+  text-align: center
+  line-height: 1.1
+
+.text-accent
+  color: $accent
+  
+.text-nowrap
+  white-space: nowrap
+
+.link
+  color: $accent
+  transition: $slowdown
+
+  &:hover
+    color: lighten($accent, 10%)
+    text-decoration: none
+
+.container-relative
+  position: relative
+  height: 100%
+  
+.container
+  padding: 0
+
+.main-wrap
+  max-width: 1440px
+  margin: 0 auto
+  
+.section
+  padding: 120px 0
+
+/* header */
+.header
+  &__line
+    display: flex
+    justify-content: space-between
+    align-items: center
+    min-height: 104px
+
+  &__logo
+    width: 105px
+
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__menu
+    margin-right: 120px
+
+  &__toggle
+    display: none
+
+
+.menu
+  &__list
+    display: flex
+    justify-content: center
+
+    &_footer
+      flex-direction: column
+
+  &__item
+    &_footer
+      margin-bottom: 18px
+
+  &__link
+    padding: 12px
+    font-weight: 500
+    font-size: 18px
+    color: $text
+    transition: $slowdown
+
+    &_footer
+      padding-left: 0
+
+    &:hover
+      color: $accent
+      text-decoration: none
+
+.link-search
+  position: relative
+  padding-left: 30px
+  padding-right: 2px
+  font-size: 18px
+  font-family: $font-600
+  color: $accent
+  transition: $slowdown
+
+  &:hover
+    color: lighten($accent, 10%)
+    text-decoration: none
+
+    .link-search__icon
+      svg
+        stroke: lighten($accent, 10%)
+
+  &__icon
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+
+    svg
+      stroke: $accent
+      width: 26px
+      height: 26px
+      transition: $slowdown
+
+.toggle
+
+  &__menu
+    position: absolute
+    top: 50%
+    right: 0
+    display: block
+    width: 40px
+    height: 40px
+    transform: translateY(-50%)
+
+    span 
+      position: absolute
+      display: block
+      top: 50%
+      transform: translateY(-50%)
+
+      &::before, &::after 
+        content: ""
+        position: absolute
+        right: 0
+      
+      &::before
+        top: -12px
+
+      &::after
+        top: 12px
+
+    span, span:after, span:before
+      width: 100%
+      height: 4px 
+      background-color: $accent
+      border-radius: 2px
+      transition: $slowdown
+
+
+.toggle__menu_open
+  span 
+    background-color: transparent
+
+    &::after
+      height: 4px 
+      transform: translateY(-12px) rotate(45deg)
+
+    &::before
+      height: 4px 
+      transform: translateY(12px) rotate(-45deg)
+        
+/* top */
+.top
+  min-height: 705px
+  padding-top: 77px
+  background-color: #ffffff
+  background-image: url(../img/bg__top.jpg)
+  background-repeat: no-repeat
+  background-position: center bottom
+  background-size: contain
+
+  &__title
+    margin-bottom: 25px
+
+  &__subtitle
+    margin-bottom: 40px
+    font-size: 24px
+    line-height: 1.4
+    text-align: center
+
+  &__wrap-btn
+    display: flex
+    justify-content: center
+
+  &__btn
+    margin: 0 8px
+
+/* process */
+.process
+  background-color: #FFF8EE
+
+  &__title
+    margin-bottom: 20px
+
+  &__variants
+    display: flex
+    justify-content: center
+
+  &__link
+    display: block
+    font-weight: 600
+    font-size: 18px
+    font-family: $font-600
+    color: $text
+    padding: 20px 40px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+    transition: $slowdown
+
+    &_active
+      color: $accent
+      border-bottom: 2px solid $accent
+
+    &:hover
+      color: $accent
+      text-decoration: none
+
+  &__inner
+    padding-top: 80px
+
+  &__lst
+    display: flex
+    justify-content: space-between
+    margin-bottom: 80px
+
+  &__item
+    display: flex
+    flex-direction: column
+    width: 33%
+    text-align: center
+
+  &__name
+    margin-bottom: 12px
+    font-weight: 600
+    font-size: 24px
+    font-family: $font-600
+    line-height: 1.3
+    color: $title
+
+  &__description
+    font-size: 18px
+
+  &__video
+    position: relative
+    height: 640px
+    background-image: url(../img/process__video.jpg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    border-radius: 24px
+
+  &__play
+    position: absolute
+    left: 50%
+    top: 50%
+    width: 96px
+    height: 96px
+    background-color: #ffffff
+    border-radius: 50%
+    transform: translate(-50%, -50%)
+    transition: $slowdown
+
+    svg
+      position: absolute
+      left: 50%
+      top: 50%
+      z-index: 10
+      fill: $accent
+      width: 37px
+      height: 37px
+      transform: translate(-45%, -50%)
+      transition: $slowdown
+
+    &:hover
+      svg
+        fill: lighten($accent, 10%)
+
+    &:active
+      transform: translate(-50%, -50%) scale(0.9)
+
+/* comments */
+.comments
+  padding-bottom: 830px
+  background-image: url(../img/bg__comment.jpg)
+  background-repeat: no-repeat
+  background-position: center bottom
+  background-size: contain
+
+  &__title
+    margin-bottom: 25px
+
+  &__subtitle
+    font-size: 24px
+    line-height: 1.3
+    text-align: center
+
+  &__lst
+    display: flex
+    justify-content: space-between
+    margin-top: 65px
+
+  &__item
+    width: 343px
+    background-color: #ffffff
+  
+  &__text
+    padding: 32px
+    font-size: 24px
+    color: $title
+    line-height: 1.25
+    border-radius: 16px
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08)
+
+  &__author
+    position: relative
+    padding: 32px
+    padding-left: 96px
+
+  &__foto
+    position: absolute
+    left: 32px
+    top: 32px
+    width: 48px
+    height: 48px
+    overflow: hidden
+    border-radius: 50%
+
+    img
+      object-fit: cover
+      height: 100%
+
+  &__name
+    font-weight: 600
+    font-size: 18px
+    font-family: $font-600
+    line-height: 1.33
+    color: $title
+
+  &__profession
+    font-size: 15px
+  
+
+/* advantages */
+.advantages
+  background-color: $accent
+  
+  &__title
+    margin-bottom: 65px
+    color: #ffffff
+
+  &__wrap
+    display: flex
+    justify-content: space-between
+
+  &__card
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: 552px
+    min-height: 280px
+    padding: 32px
+    text-decoration: none
+    background-repeat: no-repeat
+    background-position: right center
+    background-size: contain
+    border-radius: 16px
+
+    &_first
+      background-color: #ffffff
+      background-image: url(../img/advantages/1.png)
+
+    &_second
+      background-color: #FAD192
+      background-image: url(../img/advantages/2.png)
+
+    &:hover
+      text-decoration: none
+      .advantages
+        &__link
+          color: lighten($accent, 10%)
+
+  &__name
+    font-weight: 600
+    font-size: 32px
+    font-family: $font-600
+    line-height: 1.125
+    color: $title
+
+  &__link
+    margin-top: auto
+    font-weight: 600
+    font-size: 18px
+    font-family: $font-600
+    color: $accent
+
+
+/* masters */
+.masters
+  padding-bottom: 105px
+
+  &__title
+    margin-bottom: 45px
+
+  &__wrap
+    position: relative
+
+  &__item
+    width: 358px
+    overflow: hidden
+    background-color: #ffffff
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08)
+    border-radius: 16px
+
+  &__images
+    display: flex
+    height: 240px
+    overflow: hidden
+
+  &__image
+
+    &_main
+      width: 240px
+      padding-right: 4px
+
+    &_other
+      display: flex
+      flex-direction: column
+      width: 120px
+
+      img
+        height: 118px
+        &:first-child
+          margin-bottom: 4px
+
+  &__author
+    position: relative
+    display: flex
+    flex-direction: column
+    padding: 32px
+
+    img
+      height: 100%
+      object-fit: cover
+
+  &__avatar
+    position: absolute
+    left: 32px
+    top: -70px
+    width: 88px
+    height: 88px
+    overflow: hidden
+    border: 2px solid #ffffff
+    border-radius: 50%
+
+  &__name
+    margin-bottom: 4px
+    font-weight: 600
+    font-size: 24px
+    font-family: $font-600
+    line-height: 1.33
+    color: $title
+
+  &__foto
+    font-size: 18px
+
+  .swiper
+    &-container
+      padding: 20px 0
+
+    &-wrapper
+
+    &-button-next
+      display: block
+      top: auto
+      bottom: 160px
+      right: -32px
+      z-index: 10
+      width: 64px
+      height: 64px
+      background-color: #ffffff
+      box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08)
+      border-radius: 50%
+      transition: $slowdown
+
+      &::after
+        display: none
+
+      svg
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 24px
+        height: 24px
+        transform: translate(-50%, -50%)
+        transition: $slowdown
+
+      &:hover
+        outline: none
+        svg
+          transform: translate(-50%, -50%) scale(1.1)
+
+      &:active
+        outline: none
+        transform: scale(0.9)
+
+/* bottom */
+.bottom
+  overflow: hidden
+  &__block
+    position: relative
+
+    &_form
+      padding: 120px 0
+      background-color: #FFF8EE
+
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: -40%
+        height: 100%
+        width: 40%
+        background-color: #FFF8EE
+
+    &_image
+      height: 100%
+
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 720px
+        background-image: url(../img/bg__bottom.jpg)
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+
+  &__title
+    margin-bottom: 30px
+    text-align: left
+
+.form
+  &__wrap
+    display: flex
+    flex-direction: column
+    width: 410px
+
+  &__label
+    position: relative
+
+  &__tip
+    position: absolute
+    top: 12px
+    left: 30px
+    display: none
+    font-weight: 600
+    font-size: 13px
+    font-family: $font-600
+    color: rgba(0, 0, 0, 0.4)
+    opacity: 0
+
+  &__field
+    width: 100%
+    margin-bottom: 20px
+    padding: 20px 28px
+    font-weight: 600
+    font-size: 18px
+    font-family: $font-600
+    line-height: 1.2
+    color: #000000
+    background: #ffffff
+    border: 2px solid rgba(0, 0, 0, 0.08)
+    border-radius: 8px
+
+    &:focus
+      padding: 28px 28px 11px
+      border: 2px solid #496ADC
+
+      &::placeholder
+        color: transparent
+
+    &:focus + .form__tip
+      display: block
+      opacity: 1
+
+  &__btn
+    padding: 22px 28px
+    line-height: 1.1
+
+  &__agreement
+    margin-top: 25px
+    font-size: 15px
+    line-height: 1.33
+
+
+/* questions */
+.questions
+  &__title
+    margin-bottom: 50px
+
+  &__accordion
+    overflow: hidden
+    background-color: #ffffff
+    border-radius: 16px
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08)
+
+  &__item
+
+    &:not(:last-child)
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08)
+
+  &__btn
+    position: relative
+    height: 100%
+    width: 100%
+    padding: 26px 32px
+    padding-right: 80px
+    font-weight: 600
+    font-size: 24px
+    font-family: $font-600
+    color: $title
+    text-align: left
+    border: none
+    background-color: transparent
+
+    &::before
+      content: ''
+      position: absolute
+      right: 24px
+      top: 50%
+      width: 40px
+      height: 40px
+      background-image: url(../img/plus.svg)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+      transform: translateY(-50%)
+
+    &_open
+      &::before
+        background-image: url(../img/minus.svg)
+
+
+    &:active, &:focus
+      outline: none
+
+  &__inner
+    padding: 0 32px 25px
+    padding-right: 80px
+    font-size: 24px
+    line-height: 1.16
+    transition: none
+
+    &.show
+      margin-top: 0
+
+/* footer */
+.footer
+  padding: 120px 0
+  background-color: #FAFAFB
+
+  &__copy
+    font-size: 18px
+
+  &__links
+    display: flex
+    flex-direction: column
+
+  &__link
+    margin-bottom: 16px
+    font-weight: 600
+    font-size: 18px
+    font-family: $font-600
+
+.social
+  &__lst
+    display: flex
+    justify-content: flex-end
+
+  &__item
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 56px
+    height: 56px
+    background-color: #ffffff
+    border-radius: 50%
+    transition: $slowdown
+
+    svg
+      width: 24px
+      height: 24px
+      transition: $slowdown
+
+    &:not(:last-child)
+      margin-right: 16px
+
+    &:hover
+      svg
+        transform: scale(1.1)
+
+    &:active
+      transform: scale(0.9)
+
+
+
+@import "media" // Always at the end
